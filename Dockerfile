@@ -1,0 +1,51 @@
+FROM python:3.9-slim
+
+# Set environment variables FIRST (before any code copying)
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TESSERACT_PATH=/usr/bin/tesseract
+ENV FLASK_ENV=production
+ENV PORT=8000
+ENV APP_MODE=light
+ENV DOCKER_CONTAINER=true
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    tesseract-ocr \
+    tesseract-ocr-eng \
+    poppler-utils \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
+    ghostscript \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Download spacy model
+RUN python -m spacy download en_core_web_sm
+
+# NOW copy application code (environment vars are already set)
+COPY config.py .
+COPY server_production.py .
+COPY routes/ ./routes/
+COPY services/ ./services/
+
+# Create necessary directories
+RUN mkdir -p /app/uploads /app/logs
+
+# Create non-root user for security
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+USER appuser
+
+EXPOSE 8000
+
+CMD ["python", "server_production.py"]

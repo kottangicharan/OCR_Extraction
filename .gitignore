@@ -1,0 +1,46 @@
+# Ignore virtual environment
+venv/
+.env/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+
+# Ignore logs
+*.log
+
+# ============================================
+# 🔴 CRITICAL: NEVER COMMIT THESE FILES
+# ============================================
+# Environment files with real credentials
+.env
+.env.local
+.env.docker
+.env.light
+.env.production
+.env.development
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded files (may contain sensitive data)
+uploads/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# Keep only the template
+!.env.example

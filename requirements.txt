@@ -1,0 +1,43 @@
+# Core Web Framework
+Flask==3.0.3
+flask-cors==4.0.1
+Werkzeug==3.0.3
+waitress==3.0.0
+
+requests==2.32.3
+
+# MongoDB
+pymongo==4.8.0
+python-dotenv==1.0.1
+
+# Image Processing & OCR (REQUIRED)
+Pillow==10.4.0
+pytesseract==0.3.13
+numpy==1.24.4
+opencv-python-headless==4.8.1.78
+
+# PDF Processing
+pdf2image==1.17.0
+pdfplumber==0.11.4
+camelot-py[cv]==0.11.0
+
+# NLP (Colab parity)
+spacy==3.7.2
+
+# Utilities
+python-dateutil==2.9.0
+regex==2024.5.15
+requests==2.32.3
+urllib3==2.2.2
+certifi==2024.7.4
+charset-normalizer==3.3.2
+idna==3.7
+
+PyJWT==2.8.0
+
+# Optional (commented - too heavy for Docker)
+# ultralytics==8.2.0  # YOLO - 1.6GB
+# torch==2.3.1        # 800MB
+# torchvision==0.18.1 # 300MB
+# python-doctr==0.8.1 # 500MB
+# opencv-python==4.10.0.84  # Use headless version instead
