@@ -25,7 +25,7 @@ Config.init_app(app)
 CORS(app, resources={
     r"/api/*": {
         "origins": [
-            "https://smart-form-frontend-gold.vercel.app",
+            "https://smart-form-frontend-gold.vercel.app", #(keep your frontend URL here)
         ],
         "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"],

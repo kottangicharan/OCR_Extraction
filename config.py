@@ -9,7 +9,7 @@ load_dotenv()
 
 class Config:
     # MongoDB
-    MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://smart_form_db:smartfill20@smartfill.sqmqcfc.mongodb.net/?retryWrites=true&w=majority&appName=smartfill')
+    MONGODB_URI = os.getenv('MONGODB_URI')
     MONGODB_DATABASE = os.getenv('MONGODB_DATABASE', 'ocr_database')
     
     # Flask
@@ -18,7 +18,7 @@ class Config:
 
     
     #JWT configuration
-    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'a998e10b98fcbbaa6ec3244ece2b6bffa70e6b88526f7c6c1e76586f36e59e34')
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY') 
     JWT_ALGORITHM = os.getenv('JWT_ALGORITHM', 'HS256')
     JWT_TOKEN_EXPIRY_DAYS = int(os.getenv('JWT_TOKEN_EXPIRY_DAYS', 7))
 
