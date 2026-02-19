@@ -2,7 +2,7 @@
 
 > 🔗 **Project Link:** https://smart-form-frontend-gold.vercel.app/
 
-> 🤗 **Hugging Face Space (Heavy API):** (https://huggingface.co/spaces/luffy140/Enhanced_OCR_API)
+> 🤗 **Hugging Face Space (Heavy API):** https://huggingface.co/spaces/luffy140/Enhanced_OCR_API
 
 > 👨‍💻 **Built by:** Kottangi Charan — Intern at [Coursevita](https://coursevita.com), working on the OCR domain as part of the SmartFill project.
 
